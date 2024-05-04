@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -21,10 +20,11 @@ function App() {
 
       <div className="content">
         {loading ? (
-          <>
-            <Skeleton />
-            <Skeleton count={3} />
-          </>
+          <SkeletonTheme baseColor="#98E3E0" highlightColor="#fafafa">
+            <p>
+              <Skeleton count={3} />
+            </p>
+          </SkeletonTheme>
         ) : (
           <>
             <h2>Menus</h2>
